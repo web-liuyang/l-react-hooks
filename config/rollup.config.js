@@ -1,15 +1,13 @@
-import path from 'path';
-import { cwd } from 'process';
-import babel from 'rollup-plugin-babel';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
 import commonjs from '@rollup/plugin-commonjs';
-import { DEFAULT_EXTENSIONS } from '@babel/core';
+import babel from 'rollup-plugin-babel';
+import path from 'path';
 
+import { DEFAULT_EXTENSIONS } from '@babel/core';
 import { terser } from 'rollup-plugin-terser';
 import { name } from '../package.json';
-
-console.log(process.env.NODE_ENV);
+import { cwd } from 'process';
 
 const resolve = (pathname) => {
   return path.resolve(cwd(), pathname);
