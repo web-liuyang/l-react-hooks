@@ -6,8 +6,7 @@ type ReturnInfo = {
 };
 
 /**
- * @description 获取屏幕信息
- * @returns { ReturnInfo }
+ * 获取屏幕信息
  */
 const useScreen = (): ReturnInfo => {
   const { width, height, availHeight, availWidth } = screen;
