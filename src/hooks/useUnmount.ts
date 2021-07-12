@@ -1,15 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
+import { Callback } from "../types";
+import usePersistCallback from "./usePersistCallback";
 
-/**
- * 卸载时触发的函数
- * @param {callback} callback - 触发的回调
- */
-const useUnmount = (callback: Function): void => {
-  useEffect(() => {
-    return () => {
-      callback();
-    };
-  }, []);
-};
+/** 组件卸载时触发 */
+function useUnmount(callback: Callback): void;
+
+function useUnmount(callback: Callback): void {
+  const persistCallback = usePersistCallback(callback);
+
+  useEffect(
+    () => () => {
+      persistCallback();
+    },
+    []
+  );
+}
 
 export default useUnmount;

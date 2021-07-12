@@ -1,11 +1,10 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
+import { Callback } from "../types";
 
-/**
- * 数据更新时触发的函数
- * @param {callback} callback - 触发的回调
- * @param {*[]} deps - 监听变化的数组值
- */
-const useUpdate = (callback: Function, deps: any[]): void => {
+/** 依赖时更新触发 - 不包括初始加载 */
+function useUpdate(callback: Callback, deps: any[]): void;
+
+function useUpdate(callback: Callback, deps: any[]): void {
   const isFirst = useRef(false);
   useEffect(() => {
     if (!isFirst.current) {
@@ -13,7 +12,7 @@ const useUpdate = (callback: Function, deps: any[]): void => {
     } else {
       callback();
     }
-  }, deps);
-};
+  }, [...deps]);
+}
 
 export default useUpdate;

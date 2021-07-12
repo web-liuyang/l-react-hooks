@@ -1,5 +1,6 @@
 {
   "name": "l-react-hooks",
+  "private": true,
   "version": "1.0.0",
   "description": "基于 `React` 编写的 `hooks`",
   "main": "dist/index.js",
@@ -10,8 +11,7 @@
     "build": "cross-env NODE_ENV=prod rollup -c config/rollup.config.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
@@ -27,6 +27,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "rollup-plugin-license": "^2.5.0"
   }
 }
