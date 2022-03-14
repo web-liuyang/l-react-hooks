@@ -3,11 +3,11 @@ import React, { useState } from "react";
 /** 设置对象的 useState */
 function useSetState<T>(
   initialState: T | (() => T)
-): [T, React.Dispatch<React.SetStateAction<T>>, () => void];
+): [T, React.Dispatch<React.SetStateAction<Partial<T>>>, () => void];
 
 function useSetState<T = undefined>(): [
   T | undefined,
-  React.Dispatch<React.SetStateAction<T | undefined>>,
+  React.Dispatch<React.SetStateAction<Partial<T> | undefined>>,
   () => void
 ];
 
